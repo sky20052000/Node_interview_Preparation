@@ -563,4 +563,33 @@
       //             }
       //       }
       //       even(2)
+
+
+//////////// write a program How to get median of an array of numbers in JavaScript ?
+
+ let arrayMedian = [ 12,33,45,34,46];
+ 
+ function findMedian(arr){
+        for(let i =0; i<arr.length ; i++){
+            // console.log(arr[i])
+            for( let  j =0 ; j<arr.length-1; j++){
+                // console.log(arr[j])
+                if(arr[j] > arr[j+1]){
+                      let temp = arr[j];
+                       arr[j] = arr[j+1];
+                       arr[j+1] = temp
+                }
+            }
+        }
+        let n = arr.length; 
+        let middle = Math.floor(n/2)
+         if(n % 2 !==0){
+              return Math.floor(arr[middle])
+         }else{
+             let number = (arr[middle - 1] + arr[middle]) / 2
+               return Math.floor(number) ;
+         }
+ }
+ const result = findMedian(arrayMedian)
+ console.log(result,"result")
   
